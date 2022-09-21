@@ -4,7 +4,7 @@ const AvatarJsx = () => {
     const src = `https://randomuser.me/api/portraits/lego/2.jpg`
 
     return (
-        <picture>
+        <picture className="row col-12" style={{ color: 'red'}}>
             <img src={src}  alt='avatar'/>
             Andres
         </picture>
