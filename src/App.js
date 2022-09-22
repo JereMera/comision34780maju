@@ -7,7 +7,14 @@ function App() {
   return (
     <div className="App">
         <Navbar />
-        <AvatarJsx />
+
+        <AvatarJsx id={1} color={'red'}>
+          <h1>Andres</h1>
+          <h1>Seba</h1>
+        </AvatarJsx>
+
+        {/* <AvatarJsx id={2} color={'blue'} component={<h2>Sebastian</h2>} />
+        <AvatarJsx id={3} color={'green'} component={<button>haceme click</button>}/> */}
     </div>
   );
 }

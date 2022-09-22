@@ -1,12 +1,22 @@
 import './AvatarJsx.css'
 
-const AvatarJsx = () => {
-    const src = `https://randomuser.me/api/portraits/lego/2.jpg`
+const AvatarJsx = ({ color, id, children }) => {
+    let arrayChildren = []
+
+    if(!Array.isArray(children)) {
+        arrayChildren = [children]
+    } else {
+        arrayChildren = children
+    }
+
+    const [component1, ...restComponents] = arrayChildren
+
+    const src = `https://randomuser.me/api/portraits/lego/${id}.jpg`
 
     return (
-        <picture className="row col-12" style={{ color: 'red'}}>
-            <img src={src}  alt='avatar'/>
-            Andres
+        <picture style={{ color: color }}>
+            <img src={src}  alt='avatar' style={{ width: 200}}/>
+            { component1 }
         </picture>
     )
 }
