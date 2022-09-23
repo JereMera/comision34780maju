@@ -1,20 +1,33 @@
 import React from 'react'
 import './App.css';
-import AvatarJsx from './components/AvatarJsx/AvatarJsx';
 import Navbar from './components/Navbar/Navbar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Button from './components/Button/Button';
 
 function App() {
   return (
     <div className="App">
-        <Navbar />
+        {/* <Navbar />
+        <ItemListContainer greeting={'Hola'}/> */}
+        <Button 
+          style={{ cursor: 'move' }}
+          handleOnClick={(children) => console.log(children)}
+        >
+          Aceptar
+        </Button>
+        
+        <Button 
+          style={{ fontSize: '48px' }}
+          handleOnClick={() => console.log('otra')}
+        >
+          Cancelar
+        </Button>
 
-        <AvatarJsx id={1} color={'red'}>
-          <h1>Andres</h1>
-          <h1>Seba</h1>
-        </AvatarJsx>
+        <Button handleOnClick={() => console.log('cosa')}>
+          reset
+        </Button>
 
-        {/* <AvatarJsx id={2} color={'blue'} component={<h2>Sebastian</h2>} />
-        <AvatarJsx id={3} color={'green'} component={<button>haceme click</button>}/> */}
+        <Button />
     </div>
   );
 }
