@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css';
-import AvatarJsx from './components/AvatarJsx/AvatarJsx';
-import Navbar from './components/Navbar/Navbar';
+import Counter from './components/Counter/Counter';
+import Effect from './components/Effect/Effect';
 
 function App() {
+  const [show, setShow] = useState(true)
+
+  const handleOnAdd = () => {
+    console.log('se hizo click en agregar al carrito')
+  }
+
+  const handleOnAdd2 = () => {
+    console.log('se hizo click en agregar al carrito 2')
+  }
+
   return (
     <div className="App">
-        <Navbar />
-
-        <AvatarJsx id={1} color={'red'}>
-          <h1>Andres</h1>
-          <h1>Seba</h1>
-        </AvatarJsx>
-
-        {/* <AvatarJsx id={2} color={'blue'} component={<h2>Sebastian</h2>} />
-        <AvatarJsx id={3} color={'green'} component={<button>haceme click</button>}/> */}
+        {/* <Navbar />
+        <ItemListContainer greeting={'Hola'}/> */}
+        <Counter onAdd={handleOnAdd}/>
+        <Counter onAdd={handleOnAdd2}/>
+        {/* <button onClick={() => setShow(!show)}>show/hide</button>
+        {show ? <Effect /> : null} */}
     </div>
   );
 }
