@@ -24,6 +24,17 @@ const ItemListContainer = ({ greeting  }) => {
         })  
     }, [categoryId])
 
+    useEffect(() => {
+        const onResize = (e) => console.log(e)
+
+        window.addEventListener('resize', onResize)
+
+        return () => { 
+            window.removeEventListener('resize', onResize)
+            console.log('removi event listener')
+            }
+        }, [])
+
 
     if(loading) {
         return <h1>Cargando productos...</h1>
@@ -33,12 +44,32 @@ const ItemListContainer = ({ greeting  }) => {
     //     return categoryId ? <h1>No hay productos en nuestra categoria {categoryId}</h1> : <h1>No hay productos disponibles</h1>
     // }
 
+    // const handleKeyDown = (e) => {
+    //     console.log(e)
+    //     if(e.code === 'KeyA') {
+    //         e.preventDefault()
+    //     }
+    // }
+
     return (
-        <div onClick={() => console.log('click en itemlistcontainer')}>
+        <div 
+            // onClick={(event) => console.log(event)}
+            onClick={() => console.log('itemlistContainer')}
+        >
             {/* <button onClick={(e) => console.log(e)}>boton</button> */}
+            {/* <input onKeyDown={handleKeyDown}/> */}
             <ItemList products={products} />
         </div>
     )
 }
 
 export default ItemListContainer
+
+const onCLick = (callback) => {
+    //aca ocurre un codigo
+    const event = {
+
+    }
+
+    callback(event)
+}
